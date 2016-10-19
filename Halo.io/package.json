@@ -1,0 +1,9 @@
+{
+  "name": "halo.io",
+  "version": "0.0.0",
+  "description": "Halo.io",
+  "main": "server.js",
+  "author": {
+    "name": "edist"
+  }
+}
