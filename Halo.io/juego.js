@@ -148,42 +148,42 @@
         player.x = canvas.width;
     }
                 if (player.y < 0) {
-        player.y = canvas.height;
+            player.y = canvas.height;
     }
                 
                 if (player.intersects(food)) {
         score += 1;
-    food.x = random(canvas.width / 10 - 1) * 10;
+        food.x = random(canvas.width / 10 - 1) * 10;
                     food.y = random(canvas.height / 10 - 1) * 10;
                 }
 
                 for (i = 0, l = wall.length; i < l; i += 1) {
                     if (food.intersects(wall[i])) {
         food.x = random(canvas.width / 10 - 1) * 10;
-    food.y = random(canvas.height / 10 - 1) * 10;
+        food.y = random(canvas.height / 10 - 1) * 10;
                     }
 
                     if (player.intersects(wall[i])) {
         gameover = true;
-    pause = true;
+        pause = true;
                     }
                 }
             }
             
             if (lastPress == KEY_ENTER) {
         pause = !pause;
-    lastPress = null;
+        lastPress = null;
             }
         }
 
         function repaint() {
         window.requestAnimationFrame(repaint);
-    paint(ctx);
+        paint(ctx);
         }
 
         function run() {
         setTimeout(run, 100);
-    act();
+        act();
         }
 
         function init() {
