@@ -1,5 +1,4 @@
 
-
     var KEY_ENTER = 13,
             KEY_LEFT = 37,
             KEY_UP = 38,
@@ -32,7 +31,7 @@
 
         function Rectangle(x, y, width, height) {
         this.x = (x == null) ? 0 : x;
-    this.y = (y == null) ? 0 : y;
+        this.y = (y == null) ? 0 : y;
             this.width = (width == null) ? 0 : width;
             this.height = (height == null) ? this.width : height;
 
@@ -73,30 +72,25 @@
         function paint(ctx) {
             var i = 0,
                 l = 0;
-
-
+            
             ctx.fillStyle = 'black';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-
+            
             ctx.fillStyle = 'white';
             player.fill(ctx);
-
-
+            
             ctx.fillStyle = 'orange';
             for (i = 0, l = wall.length; i < l; i += 1) {
         wall[i].fill(ctx);
     }
-
-
+            
             ctx.fillStyle = 'green';
             food.fill(ctx);
 
             ctx.fillStyle = 'white';
 
             ctx.fillText('Score: ' + score, 0, 10);
-
-
+            
             if (pause) {
         ctx.textAlign = 'center';
     if (gameover) {
@@ -117,8 +111,7 @@
                 if (gameover) {
         reset();
     }
-
-
+                
                 if (lastPress == KEY_UP) {
         dir = 0;
     }
@@ -131,8 +124,7 @@
                 if (lastPress == KEY_LEFT) {
         dir = 3;
     }
-
-
+                
                 if (dir == 0) {
         player.y -= 10;
     }
@@ -145,8 +137,7 @@
                 if (dir == 3) {
         player.x -= 10;
     }
-
-
+                
                 if (player.x > canvas.width) {
         player.x = 0;
     }
@@ -159,8 +150,7 @@
                 if (player.y < 0) {
         player.y = canvas.height;
     }
-
-
+                
                 if (player.intersects(food)) {
         score += 1;
     food.x = random(canvas.width / 10 - 1) * 10;
@@ -179,8 +169,7 @@
                     }
                 }
             }
-
-
+            
             if (lastPress == KEY_ENTER) {
         pause = !pause;
     lastPress = null;
@@ -202,12 +191,8 @@
         canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
 
-
             player = new Rectangle(40, 40, 50, 50);
             food = new Rectangle(80, 80, 40, 40);
-
-
-
 
             wall.push(new Rectangle(0, 500, 500, 20));
 
@@ -220,7 +205,3 @@
         }
 
         window.addEventListener('load', init, false);
-
-
-
-
