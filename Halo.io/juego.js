@@ -1,4 +1,3 @@
-
     var KEY_ENTER = 13,
             KEY_LEFT = 37,
             KEY_UP = 38,
@@ -205,3 +204,4 @@
         }
 
         window.addEventListener('load', init, false);
+

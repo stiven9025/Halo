@@ -30,6 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bala.js" />
     <Compile Include="juego.js" />
     <Compile Include="server.js" />
     <Content Include="package.json" />
